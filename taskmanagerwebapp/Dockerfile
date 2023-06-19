@@ -74,6 +74,6 @@ CMD npm build-prod
 
 FROM nginx:alpine
 COPY --from=node /usr/src/app/dist/taskmanagerwebapp /usr/share/nginx/html/
-# EXPOSE 80
+EXPOSE 80
 
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
