@@ -13,7 +13,7 @@ export type EntityArrayResponseType = HttpResponse<IUser[]>;
 })
 export class UserService {
 
-  protected resourceUrl = "http://ec2-3-8-180-238.eu-west-2.compute.amazonaws.com:8080/api/v1/auth";
+  protected resourceUrl = "http://localhost:8080/api/v1/auth";
 
   constructor(protected http: HttpClient,) { }
 
