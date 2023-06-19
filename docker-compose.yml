@@ -4,7 +4,7 @@ services:
     container_name: taskmanagerwebapp
     image: willmear/taskmanagerwebapp:latest
     ports:
-      - "4200:4200"
+      - "80:80"
     volumes:
       - ./taskmanagerwebapp:/project
       - /project/node_modules
