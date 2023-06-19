@@ -1,0 +1,20 @@
+.new-team {
+    height: 10%;
+}
+h4 {
+    color: black
+}
+.card-bg-color {
+    background-color: #29282d;
+}
+.teams {
+    text-decoration: none;
+    color: #fff;
+}
+.teams:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.btn-color {
+    color: #000;
+}

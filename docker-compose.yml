@@ -1,0 +1,11 @@
+services:
+
+  web:
+    container_name: taskmanagerwebapp
+    image: willmear/taskmanagerwebapp:latest
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./taskmanagerwebapp:/project
+      - /project/node_modules
+    restart: unless-stopped

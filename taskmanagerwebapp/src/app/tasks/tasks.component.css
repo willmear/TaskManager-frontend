@@ -1,0 +1,19 @@
+.issues {
+    width: 90%;
+}
+
+.bgcolour {
+    background-color: #29282d;
+}
+
+.nav a {
+    color: #fff;
+}
+
+.filters {
+    color: #fff;
+}
+
+.filters:hover {
+    opacity: 0.8;
+}

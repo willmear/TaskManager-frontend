@@ -1,0 +1,56 @@
+<section class="vh-100">
+    <div class="row h-100 w-100">
+        <div class="col-2 bgcolour">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/team/{{team.id}}"><span> {{teamName}}</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/tasks"><fa-icon [icon]="faPlus"></fa-icon><span> Tasks</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/{{team.id}}/calendar"><fa-icon [icon]="faPlus"></fa-icon><span> Calendar</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/{{team.id}}/discussion"><fa-icon [icon]="faPlus"></fa-icon><span> Discussion</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10 justify-content-center d-flex py-3">
+            <div class="issues h-100 border">
+                <form #createTaskForm="ngForm" (ngSubmit)="createTask(createTaskForm.value)" class="py-3 px-2">
+
+                    <h1>New Task</h1>
+                    <div class="form-group py-3">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Enter task name" required ngModel>
+                    </div>
+                    <div class="form-group py-3">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="5" placeholder="Enter task description" required ngModel></textarea>
+                    </div>
+                    <div class="form-group py-3">
+                        <label for="priority">Priority</label>
+                        <select class="form-control" id="priority" name="priority" required ngModel>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group py-3">
+                        <label for="assignee">Assignee</label>
+                        <input type="text" class="form-control" name="assignee" id="assignee" placeholder="Enter Assignee" required ngModel>
+                    </div>
+                    <div class="form-control py-3">
+                        <label for="dueDate">Due Date</label>
+                        <input type="datetime-local" value="2025-06-01T08:30" class="form-control" name="dueDate" id="dueDate" required ngModel>
+                    </div>
+                    <div class="py-3">
+                        <button type="submit" class="btn btn-primary">Create Task</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

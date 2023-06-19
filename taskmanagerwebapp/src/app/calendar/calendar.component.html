@@ -1,0 +1,30 @@
+<section class="vh-100">
+    <div class="row h-100 w-100">
+        <div class="col-2 bgcolour">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/team/{{team.id}}"><span>{{teamName}}</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/tasks"><fa-icon [icon]="faPlus"></fa-icon><span> Tasks</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/{{team.id}}/calendar"><fa-icon [icon]="faPlus"></fa-icon><span> Calendar</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/{{team.id}}/discussion"><fa-icon [icon]="faPlus"></fa-icon><span> Discussion</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-7 py-3 px-5">
+            <div id="calendar"></div>
+        </div>
+        <div class="col-3 py-5 text-center">
+            <h2>Event Manager</h2>
+            <button class="btn btn-primary my-3" (click)="createCalendarEvent()">Create an Event</button>    
+        </div>
+        
+
+        
+    </div>
+</section>

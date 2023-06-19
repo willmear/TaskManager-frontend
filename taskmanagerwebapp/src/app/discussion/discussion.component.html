@@ -1,0 +1,40 @@
+<section class="vh-100">
+    <div class="row h-100 w-100">
+        <div class="col-2 bgcolour">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/team/{{team.id}}"><span> {{teamName}}</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/tasks"><fa-icon [icon]="faPlus"></fa-icon><span> Tasks</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/{{team.id}}/calendar"><fa-icon [icon]="faPlus"></fa-icon><span> Calendar</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/{{team.id}}/discussion"><fa-icon [icon]="faPlus"></fa-icon><span> Discussion</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10 justify-content-center d-flex py-3">
+            <div class="issues border px-3 py-3">
+                <div class="chat">
+                    <div *ngFor="let message of messages">
+                        <span class="timestamp">{{message.timestamp}}</span>
+                        <div class="row mx-auto py-2" [ngStyle]="{'justify-content': message.author.email == userService.getCurrentlyLoggedIn() ? 'end': 'start'}">
+                            <div class="card bg-light msg">
+                                <div class="card-body msg-color">{{message.message}}</div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <form #messageForm="ngForm" (ngSubmit)="sendMessage(messageForm.value)" class="chat-input">       
+                    <button type="submit" class="btn plane">
+                        <fa-icon [icon]="faPaperPlane"></fa-icon>
+                    </button>
+                    <input type="text" name="message" class="w-100" ngModel>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

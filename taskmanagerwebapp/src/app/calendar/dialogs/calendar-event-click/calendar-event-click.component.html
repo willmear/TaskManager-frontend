@@ -1,0 +1,30 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">{{event.title}}</h4>
+    
+        <button type="button" class="btn-close" data-dismiss="modal" aria-hidden="true" (click)="close()"></button>
+    </div>
+    
+    <div class="modal-body">
+        <div class="row">
+            <div class="col">
+                <p>{{event.description}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <p>Start Date: {{event.start}}</p>
+        </div>
+        <div class="row">
+            <p>End Date: {{event.end}}</p>
+        </div>
+        
+    </div>
+    
+    <div class="modal-footer">
+        <button *ngIf="event.taskId" type="button" class="btn btn-primary" (click)="onViewTask()">
+            <fa-icon [icon]="faArrow"></fa-icon>
+            View Task
+        </button>
+        <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
+    </div>
+</div>

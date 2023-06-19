@@ -1,0 +1,31 @@
+<form #editTargetForm="ngForm" (ngSubmit)="onTeamCreate(editTargetForm.value)" class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Create a New Team</h4>
+  
+      <button type="button" class="btn-close" data-dismiss="modal" aria-hidden="true" (click)="close()"></button>
+    </div>
+  
+    <div class="modal-body">
+        <div class="row justify-content-center">
+            <h5 class="justify-content-center d-flex">Team Name</h5>
+            <label for="name" class="sr-only"></label>
+            <input name="name" type="text" class="form-control w-75" id="name" placeholder="Enter a name..." ngModel />
+        </div>
+        <div class="row pt-5 justify-content-center">
+            <h5 class="justify-content-center d-flex">Add Members</h5>
+            <div *ngFor="let field of fields; let i = index" class="d-flex justify-content-center py-1">
+                <label [for]="'member' + i" class="sr-only"></label>
+                <input [name]="'member' + i" type="text" class="form-control w-50" [id]="'member' + i" placeholder="Add teammate" required ngModel />
+            </div>
+            <button class="btn btn-color" type="button" (click)="addMemberField()">
+                <fa-icon [icon]="faUserPlus"></fa-icon>
+            </button>
+            
+        </div>
+    </div>
+  
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+  

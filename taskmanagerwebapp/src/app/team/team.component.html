@@ -1,0 +1,30 @@
+<section class="vh-100">
+    <div class="h-100 py-5 px-5">
+        <div class="card h-100 card-bg-color">
+            <div class="row h-100 px-3">
+                <div class="col-4 pt-5">
+                    <h3 class="text-center pb-5">Teams</h3>
+                    <div class="pb-5" *ngFor="let team of teams">
+                        <div class="text-center teams">
+                            <a (click)="onSelectedTeam(team)"><h5>{{ team.name }}</h5></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 d-flex justify-content-center align-items-center">
+                    <div class="card w-50 new-team">
+                        <div class="row h-100 d-flex align-items-center">
+                            <div class="col-10 px-5">
+                                <h4>Create a New Team</h4>
+                            </div>
+                            <div class="col-2">
+                                <button type="button" class="btn btn-color" data-toggle="modal" (click)="teamModal()">
+                                    <fa-icon [icon]="faPlus"></fa-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</section>
