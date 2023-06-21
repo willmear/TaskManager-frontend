@@ -22,6 +22,3 @@ artifacts:
     - '**/*'
   base-directory: 'dist*'
   discard-paths: yes
-  name: taskmanagerwebapp
-  cache-control: $CACHE_CONTROL
-```
