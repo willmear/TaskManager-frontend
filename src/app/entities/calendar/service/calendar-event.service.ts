@@ -11,7 +11,7 @@ export type EntityArrayResponseType = HttpResponse<ICalendarEvent[]>;
 })
 export class CalendarEventService {
 
-  protected resourceUrl = "http://18.132.170.53:5000/api/v1/calendar-event";
+  protected resourceUrl = "https://tskmngrbckend.website:5000/api/v1/calendar-event";
 
   constructor(protected http: HttpClient) { }
 
