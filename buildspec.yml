@@ -20,7 +20,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - ng build --configuration production --proxy-config proxy.conf.json
+      - ng build --configuration production
   # post_build:
   #    commands:
   #     - aws s3 cp dist s3://taskmanagerwebapp --recursive
