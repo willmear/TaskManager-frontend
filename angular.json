@@ -13,7 +13,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "proxyConfig": "src/proxy.conf.json",
             "aot": true,
             "outputPath": "dist",
             "index": "src/index.html",
