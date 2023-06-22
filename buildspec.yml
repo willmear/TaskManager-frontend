@@ -11,7 +11,7 @@ phases:
       nodejs: 18
     commands:
       - echo Installing source NPM dependencies...
-      - npm ci
+      - npm install --legacy-peer-deps
       - npm install -g @angular/cli
   pre_build:
     commands:
@@ -20,7 +20,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - ng build --configuration=production --output-path=dist
+      - ng build --configuration production -aot
+  post_build:
+     commands:
+      - aws s3 cp dist s3://${S3_BUCKET} --recursive
+      - echo Build completed on `date`
 artifacts:
   files:
     - '**/*'
