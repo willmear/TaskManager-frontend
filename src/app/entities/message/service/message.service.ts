@@ -11,7 +11,7 @@ export type EntityArrayResponseType = HttpResponse<IMessage[]>;
 })
 export class MessageService {
 
-  protected resourceUrl = "http://localhost:8080/api/v1/discussion";
+  protected resourceUrl = "http://18.132.170.53:5000/api/v1/discussion";
 
 
   constructor(protected http: HttpClient) { }

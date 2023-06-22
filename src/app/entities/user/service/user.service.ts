@@ -13,7 +13,7 @@ export type EntityArrayResponseType = HttpResponse<IUser[]>;
 })
 export class UserService {
 
-  protected resourceUrl = "http://18.132.170.53:5000//api/v1/auth";
+  protected resourceUrl = "http://18.132.170.53:5000/api/v1/auth";
 
   constructor(protected http: HttpClient,) { }
 
