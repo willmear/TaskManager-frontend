@@ -12,7 +12,7 @@ export type EntityArrayResponseType = HttpResponse<ITask[]>;
 })
 export class TaskService {
 
-  protected resourceUrl = "https://tskmngrbckend.website:5000/api/v1/task";
+  protected resourceUrl = "https://tskmngrbckend.website/api/v1/task";
 
   constructor(protected http: HttpClient) { }
 

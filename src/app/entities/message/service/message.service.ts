@@ -11,7 +11,7 @@ export type EntityArrayResponseType = HttpResponse<IMessage[]>;
 })
 export class MessageService {
 
-  protected resourceUrl = "https://tskmngrbckend.website:5000/api/v1/discussion";
+  protected resourceUrl = "https://tskmngrbckend.website/api/v1/discussion";
 
 
   constructor(protected http: HttpClient) { }
