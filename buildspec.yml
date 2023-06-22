@@ -13,14 +13,14 @@ phases:
       - echo Installing source NPM dependencies...
       - npm install --legacy-peer-deps
       - npm install -g @angular/cli
-  pre_build:
-    commands:
-      - npm cache clean --force
-      - rm -rf node_modules dist
+  # pre_build:
+  #   commands:
+  #     - npm cache clean --force
+  #     - rm -rf node_modules dist
   build:
     commands:
       - echo Build started on `date`
-      - ng build --prod
+      - ng build --configuration production
   post_build:
      commands:
       - aws s3 cp dist s3://${S3_BUCKET} --recursive
