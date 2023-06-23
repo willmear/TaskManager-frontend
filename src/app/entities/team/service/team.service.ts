@@ -12,7 +12,7 @@ export type EntityArrayResponseType = HttpResponse<ITeam[]>;
 })
 export class TeamService {
 
-  protected resourceUrl = "https://tskmngrbckend.website/api/v1/teams";
+  protected resourceUrl = "http://localhost:5000/api/v1/teams";
 
   constructor(protected http: HttpClient) { }
 
