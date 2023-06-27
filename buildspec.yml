@@ -6,6 +6,10 @@ env:
     S3_BUCKET: "{{s3_bucket_url}}"
     BUILD_FOLDER: "dist"
 phases:
+  pre_build:
+    commands:
+      - npm cache clean --force
+      - rm -rf node_modules dist
   install:
     runtime-versions:
       nodejs: 18
@@ -13,10 +17,6 @@ phases:
       - echo Installing source NPM dependencies...
       - npm install --legacy-peer-deps
       - npm install -g @angular/cli
-  # pre_build:
-  #   commands:
-  #     - npm cache clean --force
-  #     - rm -rf node_modules dist
   build:
     commands:
       - echo Build started on `date`
