@@ -21,11 +21,7 @@ phases:
     commands:
       - echo Build started on `date`
       - ng build --configuration=production
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - aws s3 cp s3://taskmanagerwebapp --region eu-west-2 /var/www/html --recursive
-
+      
 artifacts:
   files:
     - '**/*'
