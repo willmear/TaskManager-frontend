@@ -15,12 +15,17 @@ phases:
       nodejs: 18
     commands:
       - echo Installing source NPM dependencies...
-      - npm install --legacy-peer-deps
       - npm install -g @angular/cli
+      - npm install --legacy-peer-deps
   build:
     commands:
       - echo Build started on `date`
       - ng build --configuration=production
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - aws s3 cp s3://taskmanagerwebapp --region eu-west-2 /var/www/html --recursive
+
 artifacts:
   files:
     - '**/*'
