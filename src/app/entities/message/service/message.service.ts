@@ -2,6 +2,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IMessage, NewMessage } from '../message.model';
 import { Observable } from 'rxjs/internal/Observable';
+import { environment } from 'src/environments/environment';
 
 export type EntityResponseType = HttpResponse<IMessage>;
 export type EntityArrayResponseType = HttpResponse<IMessage[]>;
@@ -11,7 +12,7 @@ export type EntityArrayResponseType = HttpResponse<IMessage[]>;
 })
 export class MessageService {
 
-  protected resourceUrl = "https://tskmngrbckend.website/api/v1/discussion";
+  protected resourceUrl = `${environment.apiUrl}/discussion`;
 
 
   constructor(protected http: HttpClient) { }

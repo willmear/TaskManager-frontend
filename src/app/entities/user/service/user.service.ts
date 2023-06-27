@@ -2,6 +2,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthUser, IUser, NewUser } from '../user.model';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 export type EntityResponseType = HttpResponse<IUser>;
 export type EntityArrayResponseType = HttpResponse<IUser[]>;
@@ -13,7 +14,7 @@ export type EntityArrayResponseType = HttpResponse<IUser[]>;
 })
 export class UserService {
 
-  protected resourceUrl = "https://tskmngrbckend.website/api/v1/auth";
+  protected resourceUrl = `${environment.apiUrl}/auth`;
 
   constructor(protected http: HttpClient,) { }
 

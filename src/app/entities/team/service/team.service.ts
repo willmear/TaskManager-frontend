@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ITeam } from '../team.model';
 import { NewTeam } from '../team.model';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 export type EntityResponseType = HttpResponse<ITeam>;
 export type EntityArrayResponseType = HttpResponse<ITeam[]>;
@@ -12,7 +13,7 @@ export type EntityArrayResponseType = HttpResponse<ITeam[]>;
 })
 export class TeamService {
 
-  protected resourceUrl = "https://tskmngrbckend.website/api/v1/teams";
+  protected resourceUrl = `${environment.apiUrl}/teams`;
 
   constructor(protected http: HttpClient) { }
 

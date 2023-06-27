@@ -21,12 +21,8 @@ phases:
     commands:
       - echo Build started on `date`
       - ng build --configuration production
-  # post_build:
-  #    commands:
-  #     - aws s3 cp dist s3://taskmanagerwebapp --recursive
-  #     - echo Build completed on `date`
 artifacts:
   files:
     - '**/*'
-  base-directory: 'dist*'
+  base-directory: 'dist'
   discard-paths: yes

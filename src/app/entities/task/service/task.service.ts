@@ -2,6 +2,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GetTask, ITask, NewTask, UpdateTask } from '../task.model';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 export type EntityResponseType = HttpResponse<ITask>;
 export type EntityArrayResponseType = HttpResponse<ITask[]>;
@@ -12,7 +13,7 @@ export type EntityArrayResponseType = HttpResponse<ITask[]>;
 })
 export class TaskService {
 
-  protected resourceUrl = "https://tskmngrbckend.website/api/v1/task";
+  protected resourceUrl = `${environment.apiUrl}/task`;
 
   constructor(protected http: HttpClient) { }
 

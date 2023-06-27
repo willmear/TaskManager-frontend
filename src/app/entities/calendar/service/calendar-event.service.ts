@@ -2,6 +2,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICalendarEvent, NewCalendarEvent } from '../calendar-event.model';
+import { environment } from 'src/environments/environment';
 
 export type EntityResponseType = HttpResponse<ICalendarEvent>;
 export type EntityArrayResponseType = HttpResponse<ICalendarEvent[]>;
@@ -11,7 +12,7 @@ export type EntityArrayResponseType = HttpResponse<ICalendarEvent[]>;
 })
 export class CalendarEventService {
 
-  protected resourceUrl = "https://tskmngrbckend.website/api/v1/calendar-event";
+  protected resourceUrl = `${environment.apiUrl}/calendar-event`;
 
   constructor(protected http: HttpClient) { }
 
