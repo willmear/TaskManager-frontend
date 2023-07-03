@@ -20,6 +20,7 @@ import { ViewTaskComponent } from './tasks/view-task/view-task.component';
 import { CalendarModule } from './calendar/calendar.module';
 import { DiscussionComponent } from './discussion/discussion.component';
 import { GdprComponent } from './gdpr/gdpr.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { GdprComponent } from './gdpr/gdpr.component';
     ViewTaskComponent,
     DiscussionComponent,
     GdprComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

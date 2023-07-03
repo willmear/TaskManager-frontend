@@ -4,3 +4,6 @@
 .navbar-colour {
     background-color: #29282d;
 }
+.page-height {
+    height: calc(100vh - 56px);
+}

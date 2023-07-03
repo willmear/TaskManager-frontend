@@ -1,44 +1,46 @@
-<nav class="navbar navbar-dark navbar-colour navbar-expand-md">
-    <a class="navbar-brand" href="#">Task Manager</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li *ngIf="! loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="/login">
-                    <span>
-                        Login
-                    </span>
-                </a>
-            </li>
-            <li *ngIf="! loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="/register">
-                    <span>
-                        Register
-                    </span>
-                </a>
-            </li>
-            <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="/home" (click)="logout()">
-                    <span>
-                        Logout
-                    </span>
-                </a>
-            </li>
-            <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="/team">
-                    <span>
-                        Teams
-                    </span>
-                </a>
-            </li>
-        </ul>
-
-    </div>
-</nav>
-<footer>
-    <a routerLink="gdpr">TaskManager GDPR policy</a>
-</footer>
-<router-outlet></router-outlet>
+<div class="page-height">
+    <nav class="navbar navbar-dark navbar-colour navbar-expand-md">
+        <a class="navbar-brand" href="#">Task Manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li *ngIf="! loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/login">
+                        <span>
+                            Login
+                        </span>
+                    </a>
+                </li>
+                <li *ngIf="! loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/register">
+                        <span>
+                            Register
+                        </span>
+                    </a>
+                </li>
+                <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/home" (click)="logout()">
+                        <span>
+                            Logout
+                        </span>
+                    </a>
+                </li>
+                <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/team">
+                        <span>
+                            Teams
+                        </span>
+                    </a>
+                </li>
+            </ul>
+    
+        </div>
+    </nav>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+    
+    
+</div>
