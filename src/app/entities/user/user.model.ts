@@ -5,6 +5,7 @@ export interface IUser {
     email: string;
     password: string;
     role: string;
+    confirmationPassword?: string;
 }
 
 export type NewUser = Omit<IUser, 'id'> & { id: null };
