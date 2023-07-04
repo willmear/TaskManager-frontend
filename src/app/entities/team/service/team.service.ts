@@ -4,6 +4,7 @@ import { ITeam } from '../team.model';
 import { NewTeam } from '../team.model';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { IUser } from '../../user/user.model';
 
 export type EntityResponseType = HttpResponse<ITeam>;
 export type EntityArrayResponseType = HttpResponse<ITeam[]>;
@@ -31,6 +32,10 @@ export class TeamService {
 
   public setTeam(team: ITeam): void {
     localStorage.setItem('team', JSON.stringify(team));
+  }
+
+  getMembers(id: number): Observable<HttpResponse<IUser[]>> {
+    return this.http.get<IUser[]>(`${this.resourceUrl}/${id}/members`, { observe: 'response' });
   }
 
   public getTeam(): ITeam {

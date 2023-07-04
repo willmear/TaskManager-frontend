@@ -21,6 +21,7 @@ export class ViewTaskComponent implements OnInit {
   title: string = "";
   timeSinceCreated: any;
   editting: boolean = false;
+  errorMessage = '';
 
   constructor(protected teamService: TeamService, protected route: ActivatedRoute, protected taskService: TaskService) { }
 
