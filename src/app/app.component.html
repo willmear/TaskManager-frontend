@@ -1,4 +1,4 @@
-<div class="page-height">
+<div class="page-size">
     <nav class="navbar navbar-dark navbar-colour navbar-expand-md">
         <a class="navbar-brand" href="#">Task Manager</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,31 +9,34 @@
             <ul class="navbar-nav ms-auto">
                 <li *ngIf="! loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a class="nav-link" routerLink="/login">
-                        <span>
-                            Login
-                        </span>
+                        Login
                     </a>
                 </li>
                 <li *ngIf="! loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a class="nav-link" routerLink="/register">
-                        <span>
-                            Register
-                        </span>
+                        Register
                     </a>
                 </li>
-                <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <!-- <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a class="nav-link" routerLink="/home" (click)="logout()">
                         <span>
                             Logout
                         </span>
                     </a>
-                </li>
+                </li> -->
                 <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a class="nav-link" routerLink="/team">
-                        <span>
-                            Teams
-                        </span>
+                        Teams
                     </a>
+                </li>
+                <li *ngIf="loggedIn()" class="nav-item dropdown" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        My Account
+                    </a>
+                    <div class="dropdown-menu dropdown-colour dropdown-menu-end">
+                        <a class="dropdown-item nav-link nav-item" routerLink="/account">Account Details</a>
+                        <a class="dropdown-item nav-link nav-item" routerLink="/home" (click)="logout()">Logout</a>
+                    </div>
                 </li>
             </ul>
     

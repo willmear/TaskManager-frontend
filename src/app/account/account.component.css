@@ -1,0 +1,19 @@
+.options {
+    border-right: 1px solid #e6e6e6;
+}
+.options a {
+    text-decoration: none;
+    color: inherit;
+}
+.options .nav-item:hover {
+    text-decoration: none;
+    color: inherit;
+    background-color: #3a3a3a;
+    border-left: #e6e6e6 2px solid; 
+}
+.options a h5 {
+    align-items: center;
+}
+.options .row {
+    height: 7%;
+}

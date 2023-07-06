@@ -12,6 +12,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { DiscussionComponent } from './discussion/discussion.component';
 import { LoginActivateGuard } from './_auth/login-activate.guard';
 import { GdprComponent } from './gdpr/gdpr.component';
+// import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'tasks/:id', component: ViewTaskComponent, canActivate:[LoginActivateGuard] },
   { path: ':id/calendar', component: CalendarComponent, canActivate:[LoginActivateGuard] },
   { path: ':id/discussion', component: DiscussionComponent, canActivate:[LoginActivateGuard] },
-  { path: 'gdpr', component: GdprComponent }
+  { path: 'gdpr', component: GdprComponent },
+  { path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
 ];
 
 @NgModule({

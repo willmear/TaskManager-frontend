@@ -4,6 +4,10 @@
 .navbar-colour {
     background-color: #29282d;
 }
-.page-height {
+.page-size {
     height: calc(100vh - 56px);
+    width: 100%;
+}
+.dropdown-colour {
+    background-color: #333333;
 }
